@@ -64,7 +64,7 @@ h1{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-input{
+.SearchBarContainer input{
     width: 30vw;
     height: 6vh;
     border: none;
@@ -73,7 +73,7 @@ input{
     color: black;
     transition: width 0.3s ease;
 }
-input:focus{
+.SearchBarContainer input:focus{
     border: 0;
     outline: none;
     width: 40vw;
@@ -91,7 +91,9 @@ input:focus{
 
 .Icon{
     background-color: rgba(255, 255, 255, 0.5);
-   
+   display: flex;
+   justify-content: center;
+   align-items: center;
     
     width: 8vw;
     height: 8vw;
@@ -104,4 +106,460 @@ input:focus{
     transform: scale(1.1);
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+.Window{
+    position: absolute;
+    opacity:1;
+    
+   
+  
+    box-sizing: border-box;
+    background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0));
+backdrop-filter:blur(15px);
+box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+border: 1px solid rgba(255, 255, 255, 0.5);
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-items: end;
+transition: transform 0.4s ease, opacity 0.4s ease, width 0.5s ease, height 0.7s ease, font-size 0.3s ease;
+}
+
+.WindowHead{
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    cursor: move;
+    justify-content: space-between;
+     background: linear-gradient(135deg, rgba(134, 106, 72, 0.8), rgba(181, 163, 126, 0.8));
+     
+}
+
+.WindowHeadButtons{
+    gap: 5px;
+    display: flex;
+    align-items: center;
+   
+}
+
+#minimize{
+    background-color: rgba(255, 255, 255, 0.5);
+    width:2vw;
+    height: 2vw;
+    position: relative;
+    border-radius: 8px;
+     cursor: pointer;
+}
+#maximize{
+    background-color: rgba(19, 224, 224, 0.5);
+    width:2vw;
+    height: 2vw;
+    position: relative;
+    border-radius: 8px;
+     cursor: pointer;
+}
+#close{
+    background-color: rgba(255, 153, 0, 0.5);
+    width:2vw;
+    height: 2vw;
+    position: relative;
+    border-radius: 8px;
+     cursor: pointer;
+     
+}
+.WindowContent{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: scroll;
+    scrollbar-width: none;
+    
+}
+
+.WindowClosed {
+    width: 2vw;
+    height: 20vh;
+     top: 50%;
+    left: 50%;
+    font-size: 0.1rem;;
+    position: absolute;
+    padding: 0 0 5px 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0));
+backdrop-filter:blur(15px);
+box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+border: 1px solid rgba(255, 255, 255, 0.5);
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease, width 0.5s ease, height 0.7s ease, font-size 1s ease;
+}
+
+.WindowHeadButtonsClosed{
+    display: none;
+}
+
+.SongImage{
+    width: 20%;
+    height: auto;
+    position: relative;
+    
+}
+
+
+.TotalDurationBar{
+    width: 82.5%;
+    
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.8));
+    height: 0.7vh;
+    display: flex;
+    align-items: center;
+      margin: 2vh 0 3vh 0;
+      border-radius: 1vh;
+}
+
+.ProgressBar{
+    background: linear-gradient(45deg, rgba(229, 196, 10, 0.9),rgba(185, 135, 7, 0.9)  );
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 1vh;
+    border-radius: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    
+}
+.CircleProgress{
+    position: relative;
+    left: 0.4vw;
+    width: 0.6vw;
+    height: 0.6vw;
+    border-radius: 100%;
+    background-color: rgb(112, 229, 188);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+     transition: transform 0.4s ease;
+}
+.CircleProgress:hover{
+    transform: scale(1.8);
+    transition: transform 0.4s ease;
+}
+
+.VolumeContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    justify-content: space-around;
+    padding: 0 0 0 5vw;
+    box-sizing: border-box;
+
+}
+.TotalVolumeBar{
+position: relative;
+    width: 10%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.8));
+    height: 0.4vh;
+    display: flex;
+    align-items: center;
+    border-radius: 2vh;
+    transition: width 1s ease;
+}
+
+.TotalVolumeBar:hover{
+    width: 30%;
+      transition: width 1s ease;
+}
+
+.VolumeBar{
+    background: white;
+    height: 0.6vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 2vh;
+}
+
+.CircleVolume{
+    position: relative;
+    left: 0.4vw;
+    width: 0.8vw;
+    height: 0.8vw;
+    border-radius: 100%;
+    background-color: rgb(195, 187, 187);
+    cursor: pointer;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.95);
+}
+.Resize{
+    width: 5vw;
+    height: 5vh;
+    background-color: rgba(229, 169, 95, 0.8);
+    border: 0.2vw solid rgba(162, 111, 49, 0.5);
+    position: relative;
+    cursor: nw-resize;
+    border-radius: 10vw 0 0 0;
+}
+
+.AudioControl{
+    display: flex;
+    margin: 1vh;
+    gap: 1vw;
+    align-items: center;
+}
+.SongChange{
+border: none;
+    width: 4vh;
+    height: 4vh;
+    font-weight: 400;
+    border-radius: 100%;
+}
+.SongPlay{
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 100%;
+    font-weight: 900;
+    color:white;
+    background: linear-gradient(45deg, rgba(229, 196, 10, 0.9),rgba(185, 135, 7, 0.9)  );
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 0px 8px rgba(20, 35, 201, 0.8); ;
+}
+
+.ExtraControlContainer{
+    display: flex;
+    position: relative;
+    
+    gap: 1vw;
+    align-items: center;
+}
+
+.ExtraControlContainerButtonActive{
+    border: none;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(229,170,40,0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ExtraControlContainerButton{
+    border: none;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(136, 103, 32, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.OnlyVolumeContainer{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    gap: 1vw;
+
+}
+.VolumeIcon{
+    transition: transform 0.2s ease;
+}
+
+.VolumeIcon:hover{
+    transform: scale(1.4);
+    transition: transform 0.2s ease;
+}
+
+.AppTitle{
+    font-weight: 600;
+    color: azure;
+    font-size:1.8vw;
+    left:2%;
+    position: relative;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.TimeIndicatorContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vw 0 5vw;
+    box-sizing: border-box;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    color: rgba(255,255,255,0.7);
+}
+
+.SongInfo{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 2vh 0 1vh 0;
+}
+
+.SongAuthor{
+    font-size: 0.6rem;
+    font-weight: 400;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    color: rgba(255,255,255,0.7);;
+}
+
+.SongTitle{
+    margin: 1vh 0 1vh 0;
+        font-weight: 700;
+        color: rgba(255,255,255,0.7);
+         text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+           font-size: 1.4rem;
+}
+
+.CalcButton{
+    width: 25%;
+    height: 25%;
+    background-color: antiquewhite;
+    border: 0.2px solid rgba(0,0,0,0.4);
+    
+}
+.CalcButton:hover{
+    
+    background-color: rgb(178, 158, 137);
+}
+.CalcButton:active{
+    
+    background-color: rgb(132, 114, 97);
+}
+
+
+.CalcControl{
+    width: 100%;
+  
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.CalcDisplayRow{
+    height: 6vh;
+    display: flex;
+    width: 100% ;
+}
+.CalcInput{
+    border: none;
+    height: 100%;
+    width: 100% ;
+    padding:  0 0 0 2vw;
+    box-sizing: content-box;
+    overflow-x: scroll;
+}
+
+.DeleteButton{
+    border: none;
+    background-color: #e0dca1;
+    position: relative;
+    
+    height: 100%;
+}
+.DeleteButton:active{
+    background-color: #bc8358;
+}
+
+.LabArea{
+    background: linear-gradient(45deg, rgba(109, 205, 13, 0.8), rgb(248, 229, 194));
+    width: 90%;
+    height: 100%;
+    border-radius: 2%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 2vh;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.LabArea div{
+    width: 5vw;
+    height: 5vw;
+    border: 1px solid white;
+    cursor: pointer;
+    margin: 0.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    
+}
+.LabArea div button{
+    width: 20%;
+    height: 40%;
+}
+
+.Battery{
+   
+}
+.Resistor p{
+    font-size: 10;
+    align-self: center;
+}
+
+.RunButton{
+    position: absolute;
+    right: 8vw;
+    padding: 1vh;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.RunButton:hover{
+    background-color: rgb(161, 161, 161);
+}
+
+.RunButton:active{
+    background-color: rgb(43, 40, 38);
+}
+
+.LEDIMGGLOW{
+    filter: drop-shadow(0 0 5px rgba(243, 9, 9, 1)) ;
+}
+
+.MeIMG{
+    width: 10vh;
+    height: 10vh;
+    border-radius:100%;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 40%;
+}
+.Me{
+    font-size: 90%;
+      position: relative;
+      margin: 0 0 0.5vh 0;
+}
+.Me2{
+    font-size: 80%;
+      position: relative;
+}
+
+.Socials{
+   width: 20%;
+   display: flex;
+   justify-content: space-evenly;
+   height: 10%;
+   margin-top: 2vh;
+}
+.Me4{
+    font-size: 60%;
+      position: relative;
 }
